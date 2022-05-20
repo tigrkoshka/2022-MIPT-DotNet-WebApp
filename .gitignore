@@ -1,0 +1,5 @@
+.idea
+obj
+bin
+tmp
+__pycache__
