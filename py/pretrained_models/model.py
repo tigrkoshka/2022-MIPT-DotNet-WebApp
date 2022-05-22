@@ -76,7 +76,7 @@ def load_model():
     mm = MyModel(VOCAB_SIZE, embedding_matrix=embedding_matrix, DEVICE=DEVICE, vocab_itos=vocab_itos, vocab_stoi=vocab_stoi)
     mm.to(DEVICE)
 
-    checkpoint = torch.load('pretrained_models/model_18_epochs.pth')
+    checkpoint = torch.load('pretrained_models/model_18_epochs.pth', map_location ='cpu')
     mm.load_state_dict(checkpoint['model_state_dict'])
     return mm
 
