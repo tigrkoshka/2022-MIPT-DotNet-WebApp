@@ -3,7 +3,7 @@ using RabbitMQ.Client;
 using RabbitMQ.Client.Events;
 using Worker;
 
-var saveDir = "../tmp";
+var saveDir = "/Users/koshkelianta/programming/c#/DotNetWebApp/tmp";
 
 var factory = new ConnectionFactory { HostName = "localhost" };
 using (var connection = factory.CreateConnection())
@@ -63,12 +63,14 @@ using (var channel = connection.CreateModel())
                 fs.Write(Encoding.UTF8.GetBytes(result.Output));
             }
         }
+        
+        channel.BasicAck(ea.DeliveryTag, false);
     };
 
     while (!channel.IsClosed)
     {
         channel.BasicConsume(queue: "task_queue",
-            autoAck: true,
+            autoAck: false,
             consumer: consumer);
     }
 }

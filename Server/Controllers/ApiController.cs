@@ -10,7 +10,7 @@ namespace Server.Controllers;
 public class ApiController : ControllerBase
 {
     private static readonly HashSet<string> SupportedExtensions = new() { ".png", ".jpg", ".jpeg" };
-    private static readonly string SaveDir = "../tmp";
+    private static readonly string SaveDir = "/Users/koshkelianta/programming/c#/DotNetWebApp/tmp";
 
     /// <summary>
     /// Saves an image and puts it in queue for processing

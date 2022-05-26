@@ -17,11 +17,11 @@ public static class Runner
             StartInfo = new ProcessStartInfo
             {
                 FileName = "/bin/zsh",
-                Arguments = $"-c \"source ~/.zshrc && cd ../py && conda activate DeepL && python generate.py --path_jpg {imageFilePath}\"",
+                Arguments = $"-c \"source ~/.zshrc && cd /Users/koshkelianta/programming/c#/DotNetWebApp/py && conda activate DeepL && python generate.py --path_jpg {imageFilePath}\"",
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,
-                CreateNoWindow = true,
+                CreateNoWindow = true
             }
         };
 
